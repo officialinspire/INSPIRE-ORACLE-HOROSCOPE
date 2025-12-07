@@ -1,0 +1,231 @@
+# developer.txt – INSPIRE HOROSCOPE & BIRTH CHART PORTAL (MVP)
+
+## High-level Goal
+
+Build a **web-based horoscope + simple birth chart portal** themed around INSPIRE.
+
+This is an MVP:
+- It does *not* need full professional-level astrology accuracy with complex ephemeris libraries.
+- It DOES need:
+  - A polished, interactive UI where users enter their birth info.
+  - A dynamically generated profile:
+    - Sun sign (always).
+    - Optional “mood” sections based on elements (Fire/Earth/Air/Water) and modalities (Cardinal/Fixed/Mutable).
+    - INSPIRE-flavored interpretations (rebellious, creative, streetwise).
+  - A daily-style horoscope generator that feels unique and “personal.”
+
+Tech: vanilla HTML/CSS/JavaScript; 3-file static site that I can embed into Shopify.
+
+## Brand / Vibe
+
+- Name: **INSPIRE COSMIC BLUEPRINT**
+- Tone: Neo-Native / hacker mystic / city shaman.
+- Feel: Tech x nature x resistance x self-mastery.
+- Not cringe or overpromise; more like insightful coaching through an esoteric lens.
+- Use emojis lightly (e.g., 🐺🔥🌙⚡) but keep it clean.
+
+## Tech Stack & Deliverables
+
+Same structure as the 8-ball project:
+
+1. `index.html`
+2. `styles.css`
+3. `script.js`
+
+No framework, no build step, no backend.
+
+Optional: Google Fonts.
+
+## Embedding Requirements
+
+Like before, design as a self-contained widget/page:
+
+- Root container: `<div id="inspire-horoscope-app">…</div>`
+- Prefix classes/IDs with `inspire-horoscope-` to avoid collisions.
+- Wrap JS in `DOMContentLoaded` and avoid leaking globals.
+- Provide brief comment in `index.html` with embedding instructions for Shopify and for standalone hosting.
+
+## User Flow
+
+1. **Landing State**
+   - Title: “INSPIRE COSMIC BLUEPRINT”
+   - Short subtext: “Drop your birth data. We’ll sketch your cosmic operating system.”
+   - A subtle “for entertainment / art purposes” disclaimer.
+
+2. **Input Form**
+   - Fields:
+     - Name or nickname (optional, used only in display).
+     - Date of birth (day, month, year) – required.
+     - Time of birth (optional) – can be HH:MM with AM/PM, or 24h.
+     - Place of birth (optional text) – used as flavor only, not for precise calcs at MVP stage.
+   - A “Generate My Blueprint” button.
+
+3. **Result View (Profile)**
+   After submission, show on the same page (no reload):
+
+   a) **Core Identity Panel**
+      - Display:
+        - Sun sign (based on DOB).
+        - Element (Fire/Earth/Air/Water).
+        - Modality (Cardinal/Fixed/Mutable).
+      - Each with a small INSPIRE-flavored blurb.
+
+   b) **INSPIRE Archetype**
+      - Based on Sun sign (and optionally element), map the user to an archetype:
+        - Examples (you can refine names and mapping):
+          - Aries: “The Shock Trooper”
+          - Taurus: “The Builder”
+          - Gemini: “The Signal Jammer”
+          - Cancer: “The Memory Keeper”
+          - Leo: “The Beacon”
+          - Virgo: “The Systems Analyst”
+          - Libra: “The Diplomat”
+          - Scorpio: “The Shadow Operative”
+          - Sagittarius: “The Scout”
+          - Capricorn: “The Architect”
+          - Aquarius: “The Hacker”
+          - Pisces: “The Dream Diver”
+      - Each archetype gets:
+        - A short **Core Directive** paragraph.
+        - A **Shadow Pattern** paragraph (what trips them up).
+        - A **Upgrade Path** paragraph (how to evolve).
+
+   c) **Daily / Session Horoscope**
+      - Generate a “today-style” horoscope on button click.
+      - It does NOT have to be API-driven. Implement a pseudo-AI text generator using:
+        - A small library of sentence fragments.
+        - Element + modality + archetype tags.
+        - Current date (just for seeding/pseudo-randomness) so it doesn’t change constantly on refresh within the same day.
+      - Logic example:
+        - Pick a base template for the element (e.g., Fire → “lean into action / courage / risk”; Earth → “stability / body / money”; etc.).
+        - Add a line referencing archetype’s Shadow Pattern (“Watch out for your default move: X”).
+        - Add one actionable line (“Try [X] in the next 24 hours.”).
+      - This should feel cohesive, not just random fragments thrown together.
+
+   d) **Mini “Birth Chart” Wheel (Simplified)**
+      - For MVP, it’s fine to:
+        - Show a simple circular graphic divided into 12 zodiac segments.
+        - Highlight the Sun sign segment.
+      - Implementation:
+        - Use CSS or SVG; no need for precise angles beyond sign division.
+      - Optionally display a short note: “Full chart (Moon, Rising, houses) coming in a future upgrade.”
+
+4. **Edit / Regenerate**
+   - Include a “Change Info” button to re-open the form (or keep form visible above).
+   - Include a “Regenerate Today’s Download” button that uses a different variation while still tagging the same sign/element.
+
+## Astrology Logic (MVP-Level)
+
+You can hard-code the zodiac sign by date ranges:
+
+- Aries: March 21 – April 19
+- Taurus: April 20 – May 20
+- Gemini: May 21 – June 20
+- Cancer: June 21 – July 22
+- Leo: July 23 – August 22
+- Virgo: August 23 – September 22
+- Libra: September 23 – October 22
+- Scorpio: October 23 – November 21
+- Sagittarius: November 22 – December 21
+- Capricorn: December 22 – January 19
+- Aquarius: January 20 – February 18
+- Pisces: February 19 – March 20
+
+Elements:
+- Fire: Aries, Leo, Sagittarius
+- Earth: Taurus, Virgo, Capricorn
+- Air: Gemini, Libra, Aquarius
+- Water: Cancer, Scorpio, Pisces
+
+Modalities:
+- Cardinal: Aries, Cancer, Libra, Capricorn
+- Fixed: Taurus, Leo, Scorpio, Aquarius
+- Mutable: Gemini, Virgo, Sagittarius, Pisces
+
+All of this logic should live in `script.js` in clean, well-commented structures so I can easily tweak text later.
+
+## Layout & UI Requirements
+
+- **Mobile-first**:
+  - Single column layout, top-down: form → profile → horoscope → mini chart.
+- **Desktop**:
+  - Max-width container (e.g., 900–1000px).
+  - Could be two-column for profile + horoscope side-by-side.
+- Sections:
+  - Distinct cards or panels (with drop shadows and subtle glows).
+- Visual Style:
+  - Dark background with cosmic gradient accents.
+  - Use accent color for the Sun sign and archetype title.
+- Animations:
+  - Simple fade-in for the results after form submit.
+  - No heavy/complex animations that hurt performance.
+
+## Code Organization
+
+**index.html**
+- Root container `#inspire-horoscope-app`.
+- Top header with title and subtitle.
+- Form section.
+- Results container (initially hidden).
+- Within results:
+  - Identity panel.
+  - Archetype panel.
+  - Horoscope panel.
+  - Chart panel.
+
+**styles.css**
+- All styles scoped with `#inspire-horoscope-app` or `.inspire-horoscope-*`.
+- Define:
+  - Typography (use a Google Font for headings and a clean font for body).
+  - Cards, borders, spacing, responsive behavior (via media queries).
+  - Subtle gradients for headers.
+  - Highlight styles for archetype name and Sun sign.
+
+**script.js**
+- On `DOMContentLoaded`, wire everything:
+  1. Parse form input, validate DOB fields.
+  2. Convert date to JS Date object and determine Sun sign from date ranges.
+  3. Map sign → element, modality, archetype.
+  4. Build the profile object, e.g.:
+
+     ```js
+     const profile = {
+       name,
+       sunSign,
+       element,
+       modality,
+       archetype,
+       elementText,
+       modalityText,
+       coreDirective,
+       shadowPattern,
+       upgradePath
+     };
+     ```
+
+  5. Render profile into DOM.
+  6. Generate horoscope text with a function like `generateHoroscope(profile, currentDate)`.
+     - Use deterministic seeding (e.g., combine sign + date) when possible so the user doesn’t get a wildly different reading on each reload the same day.
+  7. Render the mini chart highlighting the sign.
+  8. Provide a “Regenerate” button that calls `generateHoroscope` again with a slightly different random seed (but still on-theme).
+
+- Keep the text dictionaries and narrative content in clearly labeled editable sections at the top or bottom of the file with comments: `// === EDITABLE TEXT: START ===`.
+
+## Disclaimers & Footer
+
+Include at bottom:
+- A subtle line: “✨ This is an art & storytelling project, not professional advice. Trust yourself first.”
+- A small `#teamINSPIRE` tag.
+
+## Documentation Request
+
+At the end of your answer, please:
+- Explain how to:
+  - Run the app locally.
+  - Host as static files.
+  - Embed it in Shopify (iframe or inline).
+- Highlight where I can easily tweak:
+  - Archetype names and text.
+  - Sign interpretations.
+  - Horoscope flavor text and sentence fragments.
+  - Colors and fonts.

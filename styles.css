@@ -1,0 +1,799 @@
+/* ============================================
+   INSPIRE COSMIC BLUEPRINT - STYLES
+   Nature-themed with Azeban the Oracle
+   Mobile-first responsive design
+   ============================================ */
+
+/* === RESET & BASE === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #000000;
+    color: #f5e6d3;
+    min-height: 100vh;
+    line-height: 1.6;
+    position: relative;
+}
+
+/* Background images - responsive */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('background-mobile.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: -1;
+    opacity: 0.9;
+}
+
+/* Desktop background */
+@media (min-width: 768px) {
+    body::before {
+        background-image: url('background-desktop.png');
+    }
+}
+
+/* === MAIN CONTAINER === */
+#inspire-horoscope-app {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* === LOGO === */
+.inspire-horoscope-logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+.inspire-horoscope-logo {
+    max-width: 200px;
+    height: auto;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.6));
+}
+
+/* === HEADER === */
+.inspire-horoscope-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+}
+
+.inspire-horoscope-azeban-container {
+    margin-bottom: 20px;
+}
+
+.inspire-horoscope-azeban {
+    max-width: 200px;
+    height: auto;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.7));
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+}
+
+.inspire-horoscope-title {
+    margin-bottom: 20px;
+}
+
+.inspire-horoscope-title-main {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #d4af37, #f4e4c1, #b8860b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 4px;
+    text-shadow: 0 2px 10px rgba(212, 175, 55, 0.5);
+    margin-bottom: 15px;
+}
+
+/* NEW: Container for subtitle and disclaimer with wood panel background */
+.inspire-horoscope-header-text-container {
+    background: linear-gradient(135deg, 
+        rgba(90, 60, 40, 0.85) 0%, 
+        rgba(70, 45, 30, 0.85) 50%, 
+        rgba(60, 40, 25, 0.85) 100%);
+    border: 2px solid #8b6f47;
+    border-radius: 12px;
+    padding: 18px 25px;
+    margin: 15px auto;
+    max-width: 800px;
+    box-shadow: 
+        0 6px 20px rgba(0, 0, 0, 0.7),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+
+/* Wood grain texture for header text containers */
+.inspire-horoscope-header-text-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 0, 0, 0.03) 2px,
+            rgba(0, 0, 0, 0.03) 4px
+        );
+    pointer-events: none;
+    border-radius: 12px;
+}
+
+.inspire-horoscope-title-sub {
+    display: block;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #f4e4c1;
+    letter-spacing: 2px;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+}
+
+.inspire-horoscope-subtitle {
+    font-size: 1.05rem;
+    color: #f4e4c1;
+    margin-bottom: 12px;
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
+}
+
+.inspire-horoscope-disclaimer {
+    font-size: 0.9rem;
+    color: #d4af37;
+    font-style: italic;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* === WOOD PANEL CARDS === */
+.inspire-horoscope-card {
+    background: linear-gradient(135deg, 
+        rgba(90, 60, 40, 0.95) 0%, 
+        rgba(70, 45, 30, 0.95) 50%, 
+        rgba(60, 40, 25, 0.95) 100%);
+    border: 3px solid #8b6f47;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.8),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.inspire-horoscope-wood-panel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 0, 0, 0.03) 2px,
+            rgba(0, 0, 0, 0.03) 4px
+        );
+    pointer-events: none;
+    border-radius: 15px;
+}
+
+.inspire-horoscope-card-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #d4af37, #f4e4c1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* === FORM === */
+.inspire-horoscope-form-section {
+    animation: fadeIn 0.8s ease-in;
+}
+
+.inspire-horoscope-form-group {
+    margin-bottom: 25px;
+}
+
+.inspire-horoscope-label {
+    display: block;
+    font-size: 1rem;
+    color: #d4af37;
+    margin-bottom: 8px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-family: 'Cinzel', serif;
+}
+
+.inspire-horoscope-label-icon {
+    margin-right: 8px;
+}
+
+.inspire-horoscope-optional {
+    color: #b8a080;
+    font-weight: 400;
+    font-size: 0.85rem;
+    font-family: 'Raleway', sans-serif;
+}
+
+.inspire-horoscope-required {
+    color: #cd7f32;
+    font-weight: 700;
+}
+
+.inspire-horoscope-input {
+    width: 100%;
+    padding: 15px;
+    background: rgba(30, 20, 15, 0.8);
+    border: 2px solid #8b6f47;
+    border-radius: 8px;
+    color: #f5e6d3;
+    font-size: 1rem;
+    font-family: 'Raleway', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.inspire-horoscope-input:focus {
+    outline: none;
+    border-color: #d4af37;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+    background: rgba(40, 28, 20, 0.9);
+}
+
+.inspire-horoscope-input::placeholder {
+    color: #8b6f47;
+    font-style: italic;
+}
+
+/* Date/time inputs */
+.inspire-horoscope-input[type="date"],
+.inspire-horoscope-input[type="time"] {
+    color-scheme: dark;
+}
+
+/* === BUTTONS === */
+.inspire-horoscope-btn {
+    font-family: 'Cinzel', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    padding: 16px 35px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    position: relative;
+    overflow: hidden;
+}
+
+.inspire-horoscope-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.inspire-horoscope-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.inspire-horoscope-btn-primary {
+    width: 100%;
+    background: linear-gradient(135deg, #cd7f32, #d4af37, #b8860b);
+    color: #1a1410;
+    border: 2px solid #f4e4c1;
+}
+
+.inspire-horoscope-btn-primary:hover {
+    background: linear-gradient(135deg, #e89b4a, #f4e4c1, #cd7f32);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
+    transform: translateY(-2px);
+}
+
+.inspire-horoscope-btn-secondary {
+    background: rgba(139, 111, 71, 0.4);
+    color: #d4af37;
+    border: 2px solid #8b6f47;
+}
+
+.inspire-horoscope-btn-secondary:hover {
+    background: rgba(139, 111, 71, 0.7);
+    border-color: #d4af37;
+    box-shadow: 0 6px 20px rgba(139, 111, 71, 0.5);
+}
+
+/* === AZEBAN MESSAGE === */
+.inspire-horoscope-azeban-message {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: linear-gradient(135deg, rgba(90, 60, 40, 0.6), rgba(70, 45, 30, 0.6));
+    border: 2px solid #8b6f47;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.inspire-horoscope-azeban-small {
+    width: 80px;
+    height: auto;
+    flex-shrink: 0;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.6));
+}
+
+.inspire-horoscope-azeban-text {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    color: #f4e4c1;
+    font-style: italic;
+    line-height: 1.7;
+}
+
+/* === RESULTS SECTION === */
+.inspire-horoscope-results {
+    animation: fadeIn 0.8s ease-in;
+}
+
+.inspire-horoscope-actions {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.inspire-horoscope-actions button {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* === IDENTITY CARD === */
+.inspire-horoscope-identity-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.inspire-horoscope-identity-main {
+    text-align: center;
+}
+
+.inspire-horoscope-sun-sign {
+    font-size: 3rem;
+    font-weight: 900;
+    font-family: 'Cinzel', serif;
+    background: linear-gradient(135deg, #d4af37, #f4e4c1, #cd7f32);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.inspire-horoscope-element-modality {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.inspire-horoscope-badge {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.inspire-horoscope-element {
+    background: linear-gradient(135deg, rgba(205, 127, 50, 0.3), rgba(184, 134, 11, 0.3));
+    color: #f4e4c1;
+    border: 2px solid #cd7f32;
+}
+
+.inspire-horoscope-modality {
+    background: linear-gradient(135deg, rgba(139, 111, 71, 0.3), rgba(101, 67, 33, 0.3));
+    color: #d4af37;
+    border: 2px solid #8b6f47;
+}
+
+.inspire-horoscope-identity-descriptions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.inspire-horoscope-desc-item {
+    padding: 18px;
+    background: rgba(40, 28, 20, 0.6);
+    border-left: 4px solid #cd7f32;
+    border-radius: 8px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.inspire-horoscope-desc-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #e8d7c3;
+}
+
+/* === TRIAD CARD === */
+.inspire-horoscope-triad-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.inspire-horoscope-triad-section {
+    padding: 20px;
+    background: rgba(40, 28, 20, 0.5);
+    border: 2px solid #8b6f47;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.inspire-horoscope-triad-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #d4af37;
+    margin-bottom: 15px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.inspire-horoscope-triad-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(139, 111, 71, 0.3);
+}
+
+.inspire-horoscope-triad-item:last-child {
+    border-bottom: none;
+}
+
+.inspire-horoscope-triad-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
+    color: #cd7f32;
+    font-weight: 600;
+}
+
+.inspire-horoscope-triad-value {
+    font-size: 1.05rem;
+    color: #f4e4c1;
+    font-weight: 600;
+    text-align: right;
+}
+
+/* === ARCHETYPE CARD === */
+.inspire-horoscope-archetype-name {
+    font-size: 2.2rem;
+    font-weight: 900;
+    font-family: 'Cinzel', serif;
+    text-align: center;
+    background: linear-gradient(135deg, #d4af37, #f4e4c1, #cd7f32);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.inspire-horoscope-archetype-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.inspire-horoscope-archetype-section {
+    padding: 22px;
+    background: rgba(40, 28, 20, 0.5);
+    border-radius: 10px;
+    border: 2px solid #8b6f47;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.inspire-horoscope-archetype-section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #d4af37;
+    margin-bottom: 12px;
+    letter-spacing: 1.5px;
+}
+
+.inspire-horoscope-archetype-text {
+    font-size: 1.02rem;
+    line-height: 1.9;
+    color: #e8d7c3;
+}
+
+/* === HOROSCOPE CARD === */
+.inspire-horoscope-date {
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    color: #d4af37;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.inspire-horoscope-influences {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.inspire-horoscope-influence-item {
+    background: rgba(40, 28, 20, 0.6);
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #8b6f47;
+    text-align: center;
+}
+
+.inspire-horoscope-influence-label {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    color: #cd7f32;
+    font-weight: 600;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.inspire-horoscope-influence-value {
+    display: block;
+    font-size: 0.95rem;
+    color: #f4e4c1;
+    font-weight: 600;
+}
+
+.inspire-horoscope-reading {
+    font-size: 1.1rem;
+    line-height: 2;
+    color: #f5e6d3;
+    padding: 28px;
+    background: rgba(40, 28, 20, 0.7);
+    border-radius: 10px;
+    border: 2px solid #8b6f47;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.4);
+    font-family: 'Raleway', sans-serif;
+}
+
+/* === CHART CARD === */
+.inspire-horoscope-chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+.inspire-horoscope-chart {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.4));
+}
+
+.inspire-horoscope-chart-note {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #b8a080;
+    font-style: italic;
+    margin-top: 20px;
+}
+
+/* === FOOTER === */
+.inspire-horoscope-footer {
+    text-align: center;
+    padding: 40px 20px 20px;
+    color: #b8a080;
+    font-size: 0.95rem;
+}
+
+.inspire-horoscope-footer-tag {
+    margin-top: 10px;
+    font-weight: 700;
+    color: #d4af37;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 3px;
+}
+
+/* === ANIMATIONS === */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* === RESPONSIVE DESIGN === */
+
+/* Tablets (768px and up) */
+@media (min-width: 768px) {
+    #inspire-horoscope-app {
+        padding: 40px;
+    }
+
+    .inspire-horoscope-logo {
+        max-width: 250px;
+    }
+
+    .inspire-horoscope-azeban {
+        max-width: 250px;
+    }
+
+    .inspire-horoscope-title-main {
+        font-size: 3.5rem;
+    }
+
+    .inspire-horoscope-title-sub {
+        font-size: 1.3rem;
+    }
+
+    .inspire-horoscope-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .inspire-horoscope-disclaimer {
+        font-size: 0.95rem;
+    }
+
+    .inspire-horoscope-header-text-container {
+        padding: 22px 35px;
+    }
+
+    .inspire-horoscope-identity-content {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .inspire-horoscope-identity-main {
+        flex: 1;
+        min-width: 300px;
+    }
+
+    .inspire-horoscope-identity-descriptions {
+        flex: 2;
+    }
+
+    .inspire-horoscope-triad-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .inspire-horoscope-archetype-content {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .inspire-horoscope-archetype-section {
+        flex: 1;
+        min-width: 280px;
+    }
+
+    .inspire-horoscope-azeban-message {
+        gap: 30px;
+        padding: 25px;
+    }
+
+    .inspire-horoscope-azeban-small {
+        width: 100px;
+    }
+}
+
+/* Desktop (1024px and up) */
+@media (min-width: 1024px) {
+    .inspire-horoscope-actions button {
+        min-width: 250px;
+    }
+
+    .inspire-horoscope-card {
+        padding: 40px;
+    }
+
+    .inspire-horoscope-sun-sign {
+        font-size: 4rem;
+    }
+
+    .inspire-horoscope-archetype-name {
+        font-size: 2.8rem;
+    }
+}
+
+/* High-DPI Displays */
+@media (min-resolution: 192dpi) {
+    .inspire-horoscope-card {
+        border-width: 2px;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .inspire-horoscope-azeban {
+        animation: none;
+    }
+}
+
+/* Print styles */
+@media print {
+    body::before {
+        display: none;
+    }
+    
+    .inspire-horoscope-btn,
+    .inspire-horoscope-actions {
+        display: none;
+    }
+}

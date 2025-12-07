@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INSPIRE COSMIC BLUEPRINT - Azeban's Oracle</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Raleway:wght@300;400;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Music Audio Element -->
+    <audio id="inspire-horoscope-bg-music" loop preload="auto">
+        <source src="horoscope-background-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div id="inspire-horoscope-app">
+        <!-- Logo Header -->
+        <div class="inspire-horoscope-logo-container">
+            <img src="logo.png" alt="INSPIRE" class="inspire-horoscope-logo">
+        </div>
+
+        <!-- Main Header with Azeban -->
+        <header class="inspire-horoscope-header">
+            <div class="inspire-horoscope-azeban-container">
+                <img src="azeban-astrologer.png" alt="Azeban the Astrologer" class="inspire-horoscope-azeban">
+            </div>
+            <h1 class="inspire-horoscope-title">
+                <span class="inspire-horoscope-title-main">COSMIC BLUEPRINT</span>
+                <div class="inspire-horoscope-header-text-container">
+                    <span class="inspire-horoscope-title-sub">Guided by Azeban the Oracle</span>
+                </div>
+            </h1>
+            <div class="inspire-horoscope-header-text-container">
+                <p class="inspire-horoscope-subtitle">
+                    Enter your birth details. Azeban will reveal your cosmic path through the stars.
+                </p>
+                <p class="inspire-horoscope-disclaimer">
+                    ✨ Ancient wisdom for modern wanderers — trust your inner compass
+                </p>
+            </div>
+        </header>
+
+        <!-- Input Form -->
+        <section class="inspire-horoscope-form-section" id="inspire-horoscope-form-container">
+            <div class="inspire-horoscope-card inspire-horoscope-wood-panel">
+                <h2 class="inspire-horoscope-card-title">Share Your Birth Story</h2>
+                
+                <form id="inspire-horoscope-form">
+                    <!-- Name -->
+                    <div class="inspire-horoscope-form-group">
+                        <label for="inspire-horoscope-name" class="inspire-horoscope-label">
+                            <span class="inspire-horoscope-label-icon">🦝</span>
+                            Name / Nickname <span class="inspire-horoscope-optional">(optional)</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="inspire-horoscope-name" 
+                            class="inspire-horoscope-input"
+                            placeholder="What name do you walk by?"
+                        >
+                    </div>
+
+                    <!-- Date of Birth -->
+                    <div class="inspire-horoscope-form-group">
+                        <label for="inspire-horoscope-dob" class="inspire-horoscope-label">
+                            <span class="inspire-horoscope-label-icon">📅</span>
+                            Date of Birth <span class="inspire-horoscope-required">*</span>
+                        </label>
+                        <input 
+                            type="date" 
+                            id="inspire-horoscope-dob" 
+                            class="inspire-horoscope-input"
+                            required
+                        >
+                    </div>
+
+                    <!-- Time of Birth -->
+                    <div class="inspire-horoscope-form-group">
+                        <label for="inspire-horoscope-time" class="inspire-horoscope-label">
+                            <span class="inspire-horoscope-label-icon">⏰</span>
+                            Time of Birth <span class="inspire-horoscope-optional">(optional)</span>
+                        </label>
+                        <input 
+                            type="time" 
+                            id="inspire-horoscope-time" 
+                            class="inspire-horoscope-input"
+                            placeholder="HH:MM"
+                        >
+                    </div>
+
+                    <!-- Place of Birth -->
+                    <div class="inspire-horoscope-form-group">
+                        <label for="inspire-horoscope-place" class="inspire-horoscope-label">
+                            <span class="inspire-horoscope-label-icon">🌍</span>
+                            Place of Birth <span class="inspire-horoscope-optional">(optional)</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="inspire-horoscope-place" 
+                            class="inspire-horoscope-input"
+                            placeholder="Where did your journey begin?"
+                        >
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="inspire-horoscope-btn inspire-horoscope-btn-primary">
+                        🌙 Reveal My Cosmic Blueprint
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Results Container -->
+        <section class="inspire-horoscope-results" id="inspire-horoscope-results" style="display: none;">
+            
+            <!-- Azeban's Message -->
+            <div class="inspire-horoscope-azeban-message">
+                <img src="azeban-astrologer.png" alt="Azeban" class="inspire-horoscope-azeban-small">
+                <p class="inspire-horoscope-azeban-text" id="inspire-horoscope-azeban-greeting"></p>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="inspire-horoscope-actions">
+                <button id="inspire-horoscope-change-info" class="inspire-horoscope-btn inspire-horoscope-btn-secondary">
+                    ⚡ New Reading
+                </button>
+                <button id="inspire-horoscope-regenerate" class="inspire-horoscope-btn inspire-horoscope-btn-secondary">
+                    🔄 Refresh Wisdom
+                </button>
+            </div>
+
+            <!-- Core Identity Panel -->
+            <div class="inspire-horoscope-card inspire-horoscope-wood-panel inspire-horoscope-identity-card">
+                <h2 class="inspire-horoscope-card-title">Your Cosmic Identity</h2>
+                <div class="inspire-horoscope-identity-content">
+                    <div class="inspire-horoscope-identity-main">
+                        <div class="inspire-horoscope-sun-sign" id="inspire-horoscope-sun-sign"></div>
+                        <div class="inspire-horoscope-element-modality">
+                            <div class="inspire-horoscope-badge inspire-horoscope-element" id="inspire-horoscope-element"></div>
+                            <div class="inspire-horoscope-badge inspire-horoscope-modality" id="inspire-horoscope-modality"></div>
+                        </div>
+                    </div>
+                    <div class="inspire-horoscope-identity-descriptions">
+                        <div class="inspire-horoscope-desc-item">
+                            <p id="inspire-horoscope-element-text" class="inspire-horoscope-desc-text"></p>
+                        </div>
+                        <div class="inspire-horoscope-desc-item">
+                            <p id="inspire-horoscope-modality-text" class="inspire-horoscope-desc-text"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Triad System Panel -->
+            <div class="inspire-horoscope-card inspire-horoscope-wood-panel inspire-horoscope-triad-card">
+                <h2 class="inspire-horoscope-card-title">The Sacred Triad</h2>
+                <div class="inspire-horoscope-triad-content">
+                    <div class="inspire-horoscope-triad-section">
+                        <h3 class="inspire-horoscope-triad-title">⚡ Physical</h3>
+                        <div class="inspire-horoscope-triad-item">
+                            <span class="inspire-horoscope-triad-label">Trait:</span>
+                            <span id="inspire-horoscope-physical-trait" class="inspire-horoscope-triad-value"></span>
+                        </div>
+                        <div class="inspire-horoscope-triad-item">
+                            <span class="inspire-horoscope-triad-label">Virtue:</span>
+                            <span id="inspire-horoscope-physical-virtue" class="inspire-horoscope-triad-value"></span>
+                        </div>
+                    </div>
+                    <div class="inspire-horoscope-triad-section">
+                        <h3 class="inspire-horoscope-triad-title">✨ Spiritual</h3>
+                        <div class="inspire-horoscope-triad-item">
+                            <span class="inspire-horoscope-triad-label">Trait:</span>
+                            <span id="inspire-horoscope-spiritual-trait" class="inspire-horoscope-triad-value"></span>
+                        </div>
+                        <div class="inspire-horoscope-triad-item">
+                            <span class="inspire-horoscope-triad-label">Virtue:</span>
+                            <span id="inspire-horoscope-spiritual-virtue" class="inspire-horoscope-triad-value"></span>
+                        </div>
+                    </div>
+                    <div class="inspire-horoscope-triad-section">
+                        <h3 class="inspire-horoscope-triad-title">🧠 Psychological</h3>
+                        <div class="inspire-horoscope-triad-item">
+                            <span class="inspire-horoscope-triad-label">Trait:</span>
+                            <span id="inspire-horoscope-psychological-trait" class="inspire-horoscope-triad-value"></span>
+                        </div>
+                        <div class="inspire-horoscope-triad-item">
+                            <span class="inspire-horoscope-triad-label">Virtue:</span>
+                            <span id="inspire-horoscope-psychological-virtue" class="inspire-horoscope-triad-value"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Archetype Panel -->
+            <div class="inspire-horoscope-card inspire-horoscope-wood-panel inspire-horoscope-archetype-card">
+                <h2 class="inspire-horoscope-card-title">INSPIRE Archetype</h2>
+                <div class="inspire-horoscope-archetype-name" id="inspire-horoscope-archetype-name"></div>
+                <div class="inspire-horoscope-archetype-content">
+                    <div class="inspire-horoscope-archetype-section">
+                        <h3 class="inspire-horoscope-archetype-section-title">🎯 Core Directive</h3>
+                        <p id="inspire-horoscope-core-directive" class="inspire-horoscope-archetype-text"></p>
+                    </div>
+                    <div class="inspire-horoscope-archetype-section">
+                        <h3 class="inspire-horoscope-archetype-section-title">⚠️ Shadow Pattern</h3>
+                        <p id="inspire-horoscope-shadow-pattern" class="inspire-horoscope-archetype-text"></p>
+                    </div>
+                    <div class="inspire-horoscope-archetype-section">
+                        <h3 class="inspire-horoscope-archetype-section-title">⬆️ Upgrade Path</h3>
+                        <p id="inspire-horoscope-upgrade-path" class="inspire-horoscope-archetype-text"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Today's Oracle Reading -->
+            <div class="inspire-horoscope-card inspire-horoscope-wood-panel inspire-horoscope-horoscope-card">
+                <h2 class="inspire-horoscope-card-title">Azeban's Oracle Reading</h2>
+                <div class="inspire-horoscope-date" id="inspire-horoscope-date"></div>
+                
+                <!-- Temporal Influences -->
+                <div class="inspire-horoscope-influences">
+                    <div class="inspire-horoscope-influence-item">
+                        <span class="inspire-horoscope-influence-label">Hour:</span>
+                        <span id="inspire-horoscope-hour-info" class="inspire-horoscope-influence-value"></span>
+                    </div>
+                    <div class="inspire-horoscope-influence-item">
+                        <span class="inspire-horoscope-influence-label">Day:</span>
+                        <span id="inspire-horoscope-day-info" class="inspire-horoscope-influence-value"></span>
+                    </div>
+                    <div class="inspire-horoscope-influence-item">
+                        <span class="inspire-horoscope-influence-label">Season:</span>
+                        <span id="inspire-horoscope-season-info" class="inspire-horoscope-influence-value"></span>
+                    </div>
+                </div>
+
+                <div class="inspire-horoscope-reading" id="inspire-horoscope-reading"></div>
+            </div>
+
+            <!-- Mini Chart Panel -->
+            <div class="inspire-horoscope-card inspire-horoscope-wood-panel inspire-horoscope-chart-card">
+                <h2 class="inspire-horoscope-card-title">Your Celestial Wheel</h2>
+                <div class="inspire-horoscope-chart-container">
+                    <svg id="inspire-horoscope-chart" class="inspire-horoscope-chart" viewBox="0 0 400 400"></svg>
+                </div>
+                <p class="inspire-horoscope-chart-note">
+                    ✨ Full birth chart (Moon, Rising, houses) coming soon
+                </p>
+            </div>
+
+        </section>
+
+        <!-- Footer -->
+        <footer class="inspire-horoscope-footer">
+            <p>✨ Ancient wisdom meets modern insight — an art & storytelling journey</p>
+            <p class="inspire-horoscope-footer-tag">#teamINSPIRE</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

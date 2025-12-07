@@ -1,0 +1,109 @@
+PERSONALITY & VIRTUE CORRESPONDENCE SYSTEM
+---------------------------------------------
+
+I. HOURLY TRAITS & VIRTUES (24 HOURS)
+-------------------------------------
+01:00 — Trait: Introspection | Virtue: Wisdom  
+02:00 — Trait: Dreaminess | Virtue: Imagination  
+03:00 — Trait: Sensitivity | Virtue: Compassion  
+04:00 — Trait: Determination | Virtue: Endurance  
+05:00 — Trait: Awakening | Virtue: Hope  
+06:00 — Trait: Clarity | Virtue: Mindfulness  
+07:00 — Trait: Activity | Virtue: Discipline  
+08:00 — Trait: Social Warmth | Virtue: Kindness  
+09:00 — Trait: Drive | Virtue: Purpose  
+10:00 — Trait: Logic | Virtue: Integrity  
+11:00 — Trait: Inspiration | Virtue: Creativity  
+12:00 — Trait: Balance | Virtue: Harmony  
+13:00 — Trait: Certainty | Virtue: Resolve  
+14:00 — Trait: Expression | Virtue: Honesty  
+15:00 — Trait: Adaptability | Virtue: Patience  
+16:00 — Trait: Curiosity | Virtue: Learning  
+17:00 — Trait: Willpower | Virtue: Responsibility  
+18:00 — Trait: Connection | Virtue: Loyalty  
+19:00 — Trait: Reflection | Virtue: Gratitude  
+20:00 — Trait: Mystery | Virtue: Intuition  
+21:00 — Trait: Comfort | Virtue: Nurturing  
+22:00 — Trait: Depth | Virtue: Truth  
+23:00 — Trait: Transcendence | Virtue: Acceptance  
+00:00 — Trait: Rebirth | Virtue: Renewal  
+
+II. DAYS OF THE WEEK TRAITS & VIRTUES
+-------------------------------------
+Monday — Trait: Adaptation | Virtue: Resilience  
+Tuesday — Trait: Courage | Virtue: Action  
+Wednesday — Trait: Intelligence | Virtue: Communication  
+Thursday — Trait: Expansion | Virtue: Generosity  
+Friday — Trait: Affection | Virtue: Beauty  
+Saturday — Trait: Structure | Virtue: Discipline  
+Sunday — Trait: Radiance | Virtue: Joy  
+
+III. SEASONS OF THE YEAR TRAITS & VIRTUES
+-----------------------------------------
+Spring — Trait: Growth | Virtue: Renewal  
+Summer — Trait: Vitality | Virtue: Passion  
+Autumn — Trait: Transformation | Virtue: Gratitude  
+Winter — Trait: Stillness | Virtue: Wisdom  
+
+IV. HOROSCOPE TRIAD SYSTEM (PHYSICAL / SPIRITUAL / PSYCHOLOGICAL)
+-----------------------------------------------------------------
+
+Aries  
+• Physical Trait: Boldness | Virtue: Initiative  
+• Spiritual Trait: Purification | Virtue: Courage  
+• Psychological Trait: Self-definition | Virtue: Authenticity  
+
+Taurus  
+• Physical Trait: Endurance | Virtue: Stability  
+• Spiritual Trait: Earth-connection | Virtue: Patience  
+• Psychological Trait: Sensory awareness | Virtue: Contentment  
+
+Gemini  
+• Physical Trait: Agility | Virtue: Adaptability  
+• Spiritual Trait: Curiosity | Virtue: Openness  
+• Psychological Trait: Duality | Virtue: Perspective  
+
+Cancer  
+• Physical Trait: Nurturing presence | Virtue: Protection  
+• Spiritual Trait: Ancestral memory | Virtue: Devotion  
+• Psychological Trait: Emotional insight | Virtue: Empathy  
+
+Leo  
+• Physical Trait: Charisma | Virtue: Confidence  
+• Spiritual Trait: Radiance | Virtue: Leadership  
+• Psychological Trait: Identity formation | Virtue: Self-respect  
+
+Virgo  
+• Physical Trait: Precision | Virtue: Discipline  
+• Spiritual Trait: Cleansing | Virtue: Service  
+• Psychological Trait: Analysis | Virtue: Discernment  
+
+Libra  
+• Physical Trait: Poise | Virtue: Harmony  
+• Spiritual Trait: Divine balance | Virtue: Justice  
+• Psychological Trait: Relational intelligence | Virtue: Peacekeeping  
+
+Scorpio  
+• Physical Trait: Intensity | Virtue: Will  
+• Spiritual Trait: Transformation | Virtue: Faith  
+• Psychological Trait: Depth | Virtue: Insight  
+
+Sagittarius  
+• Physical Trait: Wanderlust | Virtue: Exploration  
+• Spiritual Trait: Higher mind | Virtue: Truth  
+• Psychological Trait: Optimism | Virtue: Freedom  
+
+Capricorn  
+• Physical Trait: Endurance | Virtue: Fortitude  
+• Spiritual Trait: Ascension | Virtue: Mastery  
+• Psychological Trait: Structure | Virtue: Responsibility  
+
+Aquarius  
+• Physical Trait: Originality | Virtue: Innovation  
+• Spiritual Trait: Universal mind | Virtue: Humanity  
+• Psychological Trait: Detachment | Virtue: Clarity  
+
+Pisces  
+• Physical Trait: Fluidity | Virtue: Adaptation  
+• Spiritual Trait: Mysticism | Virtue: Compassion  
+• Psychological Trait: Dream-logic | Virtue: Imagination  
